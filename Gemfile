@@ -20,6 +20,11 @@ gem 'jbuilder', '~> 2.0'
 # bundle exec rake doc:rails generates the API under doc/api.
 gem 'sdoc', '~> 0.4.0', group: :doc
 
+# Styling, forms and wizzy stuff
+gem 'twitter-bootstrap-rails'
+gem 'bootstrap-datepicker-rails'
+gem 'bootstrap-form'
+
 # dev and test gems
 group :development, :test do
   # Access an IRB console on exception pages or by using <%= console %> in views
