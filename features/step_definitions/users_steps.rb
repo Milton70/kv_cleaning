@@ -1,13 +1,18 @@
 When(/^I visit the website$/) do
-  pending # Write code here that turns the phrase above into concrete actions
+  visit root_path
 end
 
-Then(/^I am presented with the "([^"]*)" page$/) do |arg1|
-  pending # Write code here that turns the phrase above into concrete actions
+Then(/^I am presented with the "([^"]*)" page$/) do |the_page|
+  case the_page
+    when "Login"     
+      expect(page).to have_title('KV Professional Cleaning - User Login')
+  end
+
 end
 
 Then(/^I can enter my user_name and password$/) do
-  pending # Write code here that turns the phrase above into concrete actions
+  fill_in('username', with: 'Vic')
+  fill_in('password', with: 'speccy_chesh')
 end
 
 Then(/^I am presented with the administrator home page$/) do
@@ -22,8 +27,11 @@ When(/^I can choose the "([^"]*)" link$/) do |arg1|
   pending # Write code here that turns the phrase above into concrete actions
 end
 
-When(/^I click the "([^"]*)" button$/) do |arg1|
-  pending # Write code here that turns the phrase above into concrete actions
+When(/^I click the "([^"]*)" button$/) do |the_button|
+  case the_button
+    when "Login"
+      click_link('btn-login')
+  end
 end
 
 Then(/^I am presented with the "([^"]*)" form$/) do |arg1|
@@ -31,10 +39,6 @@ Then(/^I am presented with the "([^"]*)" form$/) do |arg1|
 end
 
 Given(/^I fill the form in with valid data$/) do
-  pending # Write code here that turns the phrase above into concrete actions
-end
-
-Given(/^I click the "([^"]*)" button$/) do |arg1|
   pending # Write code here that turns the phrase above into concrete actions
 end
 
